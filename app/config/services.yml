@@ -34,8 +34,8 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-    handshake_manager:
+    hellosign_manager:
         class: \AppBundle\Utils\HelloSignManager
         public: true
-        arguments: ['%hello_sign_api%', '@logger']
+        arguments: ['%hello_sign_api%','%hello_sign_client_id%', '@logger']
 
