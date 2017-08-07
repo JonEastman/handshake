@@ -25,7 +25,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Handshake</a>
+                        <a class="navbar-brand" href="{{ path('homepage') }}">Handshake</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <form class="navbar-form navbar-right">
@@ -40,9 +40,30 @@
                     </div><!--/.navbar-collapse -->
                 </div>
             </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="js-success-flash-message">
+                            {% for flashMessage in app.session.flashbag.get('success') %}
+                                <div class="alert alert-success">
+                                    <p>{{ flashMessage }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div id="js-error-flash-message">
+                            {% for flashMessage in app.session.flashbag.get('error') %}
+                                <div class="alert alert-danger">
+                                    {{ flashMessage }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         {% endblock navbar %}
 
-        {% block body %}{% endblock %}
+        {% block body %} {% endblock %}
 
         {% block footer %} {% endblock %}
 

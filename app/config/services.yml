@@ -33,3 +33,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    handshake_manager:
+        class: \AppBundle\Utils\HelloSignManager
+        public: true
+        arguments: ['%hello_sign_api%', '@logger']
+
