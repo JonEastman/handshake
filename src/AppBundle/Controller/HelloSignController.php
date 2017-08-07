@@ -8,9 +8,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class HelloSignController extends Controller
 {
     /**
-     * @Route("/hello-sign", name="hello_sign_test")
+     * @Route("/hello-sign/integrated", name="hellosign_integrated")
      */
-    public function indexAction()
+    public function sendIntegratedRequestAction()
+    {
+
+
+        return $this->render('hellosign/send_request.html.twig');
+    }
+
+    /**
+     * @Route("/hello-sign/website", name="hellosign_website")
+     */
+    public function sendWebsiteRequestAction()
     {
 
 
